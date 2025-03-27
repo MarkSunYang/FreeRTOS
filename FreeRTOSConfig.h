@@ -1,0 +1,6 @@
+#ifndef FREERTOS_CONFIG_H
+#define FREERTOS_CONFIG_H
+
+#define configTICK_TYPE_WIDTH_IN_BITS 16 
+
+#endif/* FREERTOS_CONFIG_H */

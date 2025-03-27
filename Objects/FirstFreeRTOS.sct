@@ -1,0 +1,12 @@
+LR_IROM1 0x08000000 0x00080000  {    ; Flash 区域
+    ER_IROM1 0x08000000 0x00080000 { ; 代码区
+        *.o (RESET, +First)          ; 中断向量表
+        *(InRoot$$Sections)           ; ARM 库需要的段
+        .ANY (+RO)                    ; 只读数据
+    }
+    RW_IRAM1 0x20000000 0x00010000 { ; RAM 区
+        .ANY (+RW +ZI)               ; 变量 + 零初始化数据
+    }
+    ARM_LIB_STACK 0x20010000 EMPTY -0x400 {} ; 栈区（1KB，向下生长）
+    ARM_LIB_HEAP  +0 EMPTY 0x200 {}           ; 堆区（512B）
+}
