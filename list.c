@@ -54,9 +54,22 @@ void vListInsertEnd(List_t * const pxList,ListItem_t* const pxNewListItem ){
 void vListInsert(List_t * const pxList, ListItem_t * const pxNewListItem){
 	
 	ListItem_t *pxIterator;
+	
+	/*获取节点的辅助排序值*/
 	const TickType_t xValueOfInsertion=pxNewListItem->xItemValue;
 	
 	/*寻找要插入的位置*/
+	if(xValueOfInsertion==portMAX_DELAY){
+		pxIterator=pxList->xListEnd.pxPrevious;
+	}else{
+		for(pxIterator=(ListItem_t *)&(pxList->xListEnd);
+				pxIterator->pxNext->xItemValue<=xValueOfInsertion;
+				pxIterator=pxIterator->pxNext
+		){
+			
+		}
+	}
+	
 	
 	
 	

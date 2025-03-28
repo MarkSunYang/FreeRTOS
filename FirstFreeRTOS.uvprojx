@@ -432,6 +432,16 @@
               <FileType>5</FileType>
               <FilePath>.\FreeRTOS.h</FilePath>
             </File>
+            <File>
+              <FileName>task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\task.c</FilePath>
+            </File>
+            <File>
+              <FileName>task.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\task.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
